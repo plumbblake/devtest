@@ -16,6 +16,8 @@
     --spacing-6: 26px;
     --spacing-7: 36px;
     --spacing-8: 90px;
+
+    --bold: 700;
 }
 
 * {
@@ -74,4 +76,8 @@ section {
     max-width: 960px;
     margin: 0 auto;
     padding-bottom: var(--spacing-7);
+}
+
+h3:empty, p:empty{
+    display: none;
 }
