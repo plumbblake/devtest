@@ -1,0 +1,8 @@
+#carousel-info {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#carousel-info > img {
+    width: 50px;
+}

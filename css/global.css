@@ -1,0 +1,72 @@
+@import url('//fonts.googleapis.com/css?family=Open+Sans:300,400,700');
+
+:root {
+    --primary-color: RGB(223, 70, 97);
+    --secondary-color: RGB(0, 95, 131);
+    --tertiary-color: RGB(107, 165, 57);
+    --dark-color: RGB(51, 51, 51);
+    --light-color: RGB(255, 255, 255);
+    --muted-color: RGB(208, 211, 212);
+
+    --spacing-1: 4px;
+    --spacing-2: 7px;
+    --spacing-3: 10px;
+    --spacing-4: 18px;
+    --spacing-5: 24px;
+    --spacing-6: 26px;
+    --spacing-7: 36px;
+    --spacing-8: 90px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18pt;
+    font-weight: 300;
+    color: var(--dark-color);
+    overflow: hidden;
+}
+
+body {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: var(--spacing-4);
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+h1 {
+    font-size: 43pt;
+    font-weight: 300;
+}
+
+h1 small {
+    display: block;
+    font-size: 18pt;
+}
+
+h2 {
+    font-size: 32pt;
+    font-weight: 300;
+}
+
+h3 {
+    font-size: 25pt;
+    font-weight: 700;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+}
