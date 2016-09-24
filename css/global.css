@@ -41,23 +41,27 @@ html, body {
     height: 100%;
 }
 
+h1, h2, p {
+    padding-bottom: var(--spacing-4);
+}
+
 h1 {
-    font-size: 43pt;
+    font-size: 2.38rem;
     font-weight: 300;
 }
 
 h1 small {
     display: block;
-    font-size: 18pt;
+    font-size: 1rem;
 }
 
 h2 {
-    font-size: 32pt;
+    font-size: 1.7rem;
     font-weight: 300;
 }
 
 h3 {
-    font-size: 25pt;
+    font-size: 1.38rem;
     font-weight: 700;
 }
 
@@ -65,8 +69,9 @@ img {
     max-width: 100%;
 }
 
-.container {
+section {
     width: 100%;
     max-width: 960px;
     margin: 0 auto;
+    padding-bottom: var(--spacing-7);
 }
