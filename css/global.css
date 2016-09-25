@@ -52,7 +52,7 @@ h1 {
     font-weight: 300;
 }
 
-h1 small {
+h1 small, h2 small {
     display: block;
     font-size: 1rem;
 }
@@ -79,5 +79,9 @@ section {
 }
 
 h3:empty, p:empty{
+    display: none;
+}
+
+.hide {
     display: none;
 }
