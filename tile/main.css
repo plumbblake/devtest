@@ -11,6 +11,7 @@ section.full-width {
     position: relative;
     min-width: 200px;
     margin-right: var(--spacing-4);
+    -webkit-transition: min-width 200ms ease;
     transition: min-width 200ms ease;
     color: var(--light-color);
 }
@@ -60,4 +61,16 @@ section.full-width {
 
 small {
     color: var(--secondary-color);
+}
+
+@media (max-width: 570px) {
+    section {
+        flex-wrap: wrap;
+    }
+
+    #video {
+        min-width: 100%;
+        -webkit-transition: none;
+        transition: none;
+    }
 }

@@ -11,17 +11,26 @@
     var templateHeading = template.content.querySelector('h3');
     var templateContent = template.content.querySelector('.content');
     var templateMeta = template.content.querySelector('.meta');
-    var templateImageContainer = template.content.querySelector('.tile-img-container')
+    var templateImageContainer = template.content.querySelector('.tile-img-container');
+    var isMobile = false;
+    var windowWidth = 0;
+    var widthChange = 570;
+
+    var updateWindowWidth = function(){
+        windowWidth = window.innerWidth || document.documentElement.offsetWidth || document.querySelector('body').offsetWidth;
+    };
+    updateWindowWidth();
 
     var determineAppend = function(templateClone){
-        if(leftColumn.offsetHeight > rightColumn.offsetHeight){
+        if(leftColumn.offsetHeight > rightColumn.offsetHeight && !isMobile){
             rightColumn.appendChild(templateClone);
         } else {
             leftColumn.appendChild(templateClone);
         }
-    }
+    };
 
     var loadData = function(){
+        isMobile = windowWidth > widthChange ? false : true;
         for(skip; skip < take && skip < data.tiles.length; skip++) {
             var tile = data.tiles[skip];
             templateImage.src = tile.image;
@@ -36,6 +45,17 @@
             var templateClone = document.importNode(template.content, true);
             determineAppend(templateClone);
         }
+    };
+
+    var redraw = function(){
+        while (rightColumn.firstChild) {
+            rightColumn.removeChild(rightColumn.firstChild);
+        }
+        while (leftColumn.firstChild) {
+            leftColumn.removeChild(leftColumn.firstChild);
+        }
+        skip = 0;
+        loadData();
     };
 
     request.open('GET', 'masonry-data.json');
@@ -55,5 +75,12 @@
             loadMore.style.display = 'none';
         }
         loadData();
+    });
+
+    window.addEventListener('resize', function(){
+        updateWindowWidth();
+        if((windowWidth > widthChange && isMobile) || (windowWidth < widthChange && !isMobile)) {
+            redraw();
+        }
     });
 })();

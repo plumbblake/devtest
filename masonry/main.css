@@ -22,7 +22,7 @@ h3 {
     border: 1px solid;
     font-weight: var(--bold);
     padding: var(--spacing-2) var(--spacing-4);
-    margin: 0 auto;
+    margin: 0 auto var(--spacing-4) auto;
     cursor: pointer;
 }
 
@@ -71,4 +71,20 @@ h3 {
 .meta {
     padding-top: var(--spacing-4);
     font-weight: normal;
+}
+
+@media (max-width: 570px) {
+    #main-section {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    #left-column {
+        width: 100%;
+    }
+
+    #right-column {
+        display: none;
+    }
 }
