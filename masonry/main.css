@@ -24,6 +24,7 @@ h3 {
     padding: var(--spacing-2) var(--spacing-4);
     margin: 0 auto var(--spacing-4) auto;
     cursor: pointer;
+    color: var(--dark-color);
 }
 
 .tile {
